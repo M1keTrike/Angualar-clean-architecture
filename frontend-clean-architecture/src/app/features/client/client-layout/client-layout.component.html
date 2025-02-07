@@ -1,0 +1,25 @@
+<div class="flex h-screen">
+
+    <nav class="w-64 bg-blue-800 text-white p-5">
+      <h2 class="text-xl font-bold mb-6">Panel Cliente</h2>
+      <ul>
+        <li class="mb-3">
+          <a routerLink="/client/orders" class="block p-2 rounded hover:bg-blue-700">Órdenes</a>
+        </li>
+        <li class="mb-3">
+          <a routerLink="/client/products" class="block p-2 rounded hover:bg-blue-700">Ver Productos</a>
+        </li>
+        <li>
+          <button (click)="logout()" class="w-full bg-red-500 text-white p-2 rounded hover:bg-red-700">
+            Cerrar Sesión
+          </button>
+        </li>
+      </ul>
+    </nav>
+  
+  
+    <main class="flex-1 p-5">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  

@@ -1,0 +1,20 @@
+<div class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-bold mb-4 text-center">Iniciar Sesión</h2>
+      <form (submit)="login(); $event.preventDefault();">
+        <div class="mb-4">
+          <label class="block text-gray-700">Usuario</label>
+          <input type="text" [(ngModel)]="username" class="w-full p-2 border rounded" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700">Contraseña</label>
+          <input type="password" [(ngModel)]="password" class="w-full p-2 border rounded" required>
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+          Iniciar sesión
+        </button>
+        <p *ngIf="errorMessage" class="text-red-500 mt-2 text-center">{{ errorMessage }}</p>
+      </form>
+    </div>
+  </div>
+  
