@@ -1,32 +1,30 @@
 <div class="p-5">
-    <h2 class="text-2xl font-bold mb-4">Gestión de Productos</h2>
-    <table class="w-full border">
-      <thead class="bg-gray-200">
-        <tr>
-          <th class="p-2 border">ID</th>
-          <th class="p-2 border">Nombre</th>
-          <th class="p-2 border">Precio</th>
-          <th class="p-2 border">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products">
-          <td class="p-2 border">{{ product.id }}</td>
-          <td class="p-2 border">{{ product.name }}</td>
-          <td class="p-2 border">${{ product.price }}</td>
-          <td class="p-2 border">
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded mr-2">Editar</button>
-            <button (click)="deleteProduct(product.id)" class="bg-red-500 text-white px-2 py-1 rounded">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h2 class="text-2xl font-bold mb-4">Gestión de Productos</h2>
+  <table class="w-full border">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="p-2 border">ID</th>
+        <th class="p-2 border">Nombre</th>
+        <th class="p-2 border">Precio</th>
+        <th class="p-2 border">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td class="p-2 border">{{ product.Id }}</td>
+        <td class="p-2 border">{{ product.Name }}</td>
+        <td class="p-2 border">${{ product.Price }}</td>
+        <td class="p-2 border">
+          <button class="bg-yellow-500 text-white px-2 py-1 rounded mr-2">Editar</button>
+          <button (click)="deleteProduct(product.Id)" class="bg-red-500 text-white px-2 py-1 rounded">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <button (click)="showForm = !showForm" class="bg-green-500 text-white px-3 py-2 rounded mb-4">
-    {{ showForm ? 'Cancelar' : 'Nuevo Producto' }}
-  </button>
-  
-  <app-product-form *ngIf="showForm" (formSubmit)="loadProducts(); showForm = false"></app-product-form>
-  
-  
+<button (click)="showForm = !showForm" class="bg-green-500 text-white px-3 py-2 rounded mb-4">
+  {{ showForm ? 'Cancelar' : 'Nuevo Producto' }}
+</button>
+
+<app-product-form *ngIf="showForm" (formSubmit)="loadProducts(); showForm = false"></app-product-form>

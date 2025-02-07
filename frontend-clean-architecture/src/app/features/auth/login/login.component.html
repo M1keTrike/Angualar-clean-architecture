@@ -4,11 +4,11 @@
       <form (submit)="login(); $event.preventDefault();">
         <div class="mb-4">
           <label class="block text-gray-700">Usuario</label>
-          <input type="text" [(ngModel)]="username" class="w-full p-2 border rounded" required>
+          <input type="text" [(ngModel)]="username" name="username" class="w-full p-2 border rounded" required>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700">Contraseña</label>
-          <input type="password" [(ngModel)]="password" class="w-full p-2 border rounded" required>
+          <input type="password" [(ngModel)]="password" name="password" class="w-full p-2 border rounded" required>
         </div>
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
           Iniciar sesión
