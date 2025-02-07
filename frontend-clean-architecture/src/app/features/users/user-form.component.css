@@ -1,0 +1,8 @@
+input, select {
+    outline: none;
+    border: 1px solid #ccc;
+  }
+  input:focus, select:focus {
+    border-color: #4a90e2;
+  }
+  
