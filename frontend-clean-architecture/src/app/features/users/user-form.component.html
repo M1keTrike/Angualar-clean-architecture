@@ -1,0 +1,18 @@
+<div class="p-5 bg-gray-100 rounded-lg">
+    <h2 class="text-xl font-bold mb-4">{{ user.id ? 'Editar' : 'Crear' }} Usuario</h2>
+    <form (submit)="saveUser(); $event.preventDefault();">
+      <div class="mb-4">
+        <label class="block">Usuario</label>
+        <input type="text" [(ngModel)]="user.username" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label class="block">Rol</label>
+        <select [(ngModel)]="user.role" class="w-full p-2 border rounded" required>
+          <option value="admin">Admin</option>
+          <option value="client">Cliente</option>
+        </select>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded">Guardar</button>
+    </form>
+  </div>
+  
