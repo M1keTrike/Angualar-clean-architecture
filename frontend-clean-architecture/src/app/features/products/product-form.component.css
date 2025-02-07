@@ -1,8 +1,13 @@
 input {
-    outline: none;
-    border: 1px solid #ccc;
-  }
-  input:focus {
-    border-color: #4a90e2;
-  }
-  
+  outline: none;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #4a90e2;
+}
+
+button {
+  transition: background-color 0.3s ease-in-out;
+}

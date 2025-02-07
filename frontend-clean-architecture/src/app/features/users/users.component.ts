@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, User } from './user.service';
+import { CommonModule } from '@angular/common';
+import { UserFormComponent } from './user-form.component';
 
 @Component({
   selector: 'app-users',
   standalone: true,
+  imports: [CommonModule,UserFormComponent], 
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
