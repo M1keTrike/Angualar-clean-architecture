@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService, User } from './user.service';
+import { UserService } from '../infraestructure/user.service';
 import { CommonModule } from '@angular/common';
 import { UserFormComponent } from './user-form.component';
+import { User } from '../domain/user.model';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [CommonModule,UserFormComponent], 
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  imports: [CommonModule, UserFormComponent],
+  templateUrl: '../infraestructure/users.component.html',
+  styleUrls: ['../infraestructure/users.component.css'],
 })
 export class UsersComponent implements OnInit {
   users: User[] = [];
   showForm = false;
-
 
   constructor(private userService: UserService) {}
 
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers(): void {
-    this.userService.getAll().subscribe(data => this.users = data);
+    this.userService.getAll().subscribe((data) => (this.users = data));
   }
 
   deleteUser(id: number): void {

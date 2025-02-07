@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from './order.service';
-import { OrderResponse } from './orderResponse.model';
+import { OrderService } from '../infraestructure/order.service';
+import { OrderResponse } from '../domain/orderResponse.model';
 import { CommonModule } from '@angular/common';
 import { OrderFormComponent } from './order-form.component';
-import { Order } from './order.model';
+import { Order } from '../domain/order.model';
 
 @Component({
   selector: 'app-orders',
   standalone: true,
   imports: [CommonModule, OrderFormComponent],
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css'],
+  templateUrl: '../infraestructure/orders.component.html',
+  styleUrls: ['../infraestructure/orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
   orders: Order[] = [];
