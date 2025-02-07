@@ -1,0 +1,15 @@
+<div class="p-5 bg-gray-100 rounded-lg">
+    <h2 class="text-xl font-bold mb-4">{{ product.id ? 'Editar' : 'Crear' }} Producto</h2>
+    <form (submit)="saveProduct(); $event.preventDefault();">
+      <div class="mb-4">
+        <label class="block">Nombre</label>
+        <input type="text" [(ngModel)]="product.name" class="w-full p-2 border rounded" required>
+      </div>
+      <div class="mb-4">
+        <label class="block">Precio</label>
+        <input type="number" [(ngModel)]="product.price" class="w-full p-2 border rounded" required>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white p-2 rounded">Guardar</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,33 @@
+<div class="p-5">
+    <h2 class="text-2xl font-bold mb-4">Gestión de Órdenes</h2>
+    <button class="bg-green-500 text-white px-3 py-2 rounded mb-4">Nueva Orden</button>
+    <table class="w-full border">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-2 border">ID</th>
+          <th class="p-2 border">Producto</th>
+          <th class="p-2 border">Cantidad</th>
+          <th class="p-2 border">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td class="p-2 border">{{ order.id }}</td>
+          <td class="p-2 border">{{ order.product }}</td>
+          <td class="p-2 border">{{ order.quantity }}</td>
+          <td class="p-2 border">
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded mr-2">Editar</button>
+            <button (click)="deleteOrder(order.id)" class="bg-red-500 text-white px-2 py-1 rounded">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button (click)="showForm = !showForm" class="bg-green-500 text-white px-3 py-2 rounded mb-4">
+    {{ showForm ? 'Cancelar' : 'Nueva Orden' }}
+  </button>
+  
+  <app-order-form *ngIf="showForm" (formSubmit)="loadOrders(); showForm = false"></app-order-form>
+  
+  
